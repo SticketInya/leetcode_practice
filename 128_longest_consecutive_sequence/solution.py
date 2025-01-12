@@ -7,7 +7,11 @@ class Solution:
         visited = set[int]()
         longest = 0
 
-        for num in nums:
+        # A youtube commenter pointed out that in case there are
+        # a lot of repeating values, walking through the set
+        # provides a better runtime while not impacting regular
+        # test cases
+        for num in unique_values:
             if num in visited:
                 continue
             is_start_of_set = num - 1 not in unique_values
