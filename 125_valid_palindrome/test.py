@@ -14,3 +14,14 @@ class TestLargestRectangleArea:
         for text, want in tests:
             got = Solution().isPalindrome(text)
             assert want == got
+
+    def testLargestRectangleAreaTwoPointers(self):
+        tests: List[Tuple[str, bool]] = [
+            ("A man, a plan, a canal: Panama", True),
+            ("race a car", False),
+            (" ", True),
+        ]
+
+        for text, want in tests:
+            got = Solution().isPalindromeTwoPointers(text)
+            assert want == got
