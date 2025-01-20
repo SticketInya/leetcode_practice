@@ -17,16 +17,6 @@ class Solution:
             for pile in piles:
                 total_hours += math.ceil(pile / k)
 
-            print(
-                {
-                    "total_hours": total_hours,
-                    "k": k,
-                    "left": left,
-                    "right": right,
-                    "h": h,
-                }
-            )
-
             if total_hours > h:
                 left = k + 1
             else:
