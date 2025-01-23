@@ -17,7 +17,7 @@ class TimeMap:
             return ""
 
         left, right = 0, len(nums) - 1
-        current_max = nums[0]
+        current_max_index = 0
 
         while left <= right:
             mid = (left + right) // 2
@@ -28,11 +28,13 @@ class TimeMap:
             if nums[mid][0] > timestamp:
                 right = mid - 1
             else:
-                if nums[mid][0] > current_max[0]:
-                    current_max = nums[mid]
+                if nums[mid][0] > nums[current_max_index][0]:
+                    current_max_index = mid
                 left = mid + 1
 
-        return current_max[1] if timestamp > current_max[0] else ""
+        return (
+            nums[current_max_index][1] if timestamp > nums[current_max_index][0] else ""
+        )
 
 
 # Your TimeMap object will be instantiated and called as such:
